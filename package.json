@@ -1,0 +1,12 @@
+{
+  "name": "library-management-app",
+  "version": "1.0.0",
+  "description": "This app allows a library patron to view the books, movies, and music available, as well as which ones they have checked out.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
