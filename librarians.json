@@ -1,0 +1,52 @@
+{
+    "librarian": {
+        "firstname": "Brooklyn",
+        "lastname": "Sowards",
+        "email": "test1@mail.com",
+        "address": "111 Sowards Rd., Rexburg, ID",
+        "title": "Head Librarian",
+        "employee_number": "101001",
+        "start_date": "030320"
+    },
+
+    "librarian2": {
+        "firstname": "Christi",
+        "lastname": "Johnson",
+        "email": "test2@mail.com",
+        "address": "222 Johnson Rd., Rexburg, ID",
+        "title": "Librarian",
+        "employee_number": "101002",
+        "start_date": "050320"
+    },
+
+    "librarian3": {
+        "firstname": "Kalina",
+        "lastname": "Warner",
+        "email": "test3@mail.com",
+        "address": "333 Warner Rd., Rexburg, ID",
+        "title": "Librarian",
+        "employee_number": "101003",
+        "start_date": "060521"
+    },
+
+    "librarian4": {
+        "firstname": "Melinda",
+        "lastname": "Muller",
+        "email": "test4@mail.com",
+        "address": "444 Muller Rd., Rexburg, ID",
+        "title": "Librarian",
+        "employee_number": "101004",
+        "start_date": "070522"
+    },
+
+    "librarian5": {
+        "firstname": "Sterling",
+        "lastname": "Tucker",
+        "email": "test5@mail.com",
+        "address": "555 Sterling Rd., Rexburg, ID",
+        "title": "Librarian",
+        "employee_number": "101005",
+        "start_date": "080523"
+    }
+    
+}
