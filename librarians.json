@@ -38,44 +38,4 @@
   "title": "Librarian",
   "employee_num": "9714594383",
   "start_date": "6/1/2023"
-}, {
-  "id": 6,
-  "first_name": "Monti",
-  "last_name": "Merrill",
-  "email": "mmerrill5@imdb.com",
-  "title": "Librarian",
-  "employee_num": "4386299610",
-  "start_date": "10/5/2023"
-}, {
-  "id": 7,
-  "first_name": "Ethyl",
-  "last_name": "McRamsey",
-  "email": "emcramsey6@noaa.gov",
-  "title": "Librarian",
-  "employee_num": "2166285090",
-  "start_date": "1/18/2024"
-}, {
-  "id": 8,
-  "first_name": "Ninon",
-  "last_name": "Hanington",
-  "email": "nhanington7@nasa.gov",
-  "title": "Librarian",
-  "employee_num": "7771344321",
-  "start_date": "2/13/2024"
-}, {
-  "id": 9,
-  "first_name": "Tobit",
-  "last_name": "Barker",
-  "email": "tbarker8@twitpic.com",
-  "title": "Librarian",
-  "employee_num": "5990654847",
-  "start_date": "5/15/2023"
-}, {
-  "id": 10,
-  "first_name": "Ludwig",
-  "last_name": "Mercy",
-  "email": "lmercy9@squidoo.com",
-  "title": "Librarian",
-  "employee_num": "7074975524",
-  "start_date": "3/2/2024"
 }]
