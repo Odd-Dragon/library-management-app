@@ -1,52 +1,81 @@
-{
-    "librarian": {
-        "firstname": "Brooklyn",
-        "lastname": "Sowards",
-        "email": "test1@mail.com",
-        "address": "111 Sowards Rd., Rexburg, ID",
-        "title": "Head Librarian",
-        "employee_number": "101001",
-        "start_date": "030320"
-    },
-
-    "librarian2": {
-        "firstname": "Christi",
-        "lastname": "Johnson",
-        "email": "test2@mail.com",
-        "address": "222 Johnson Rd., Rexburg, ID",
-        "title": "Librarian",
-        "employee_number": "101002",
-        "start_date": "050320"
-    },
-
-    "librarian3": {
-        "firstname": "Kalina",
-        "lastname": "Warner",
-        "email": "test3@mail.com",
-        "address": "333 Warner Rd., Rexburg, ID",
-        "title": "Librarian",
-        "employee_number": "101003",
-        "start_date": "060521"
-    },
-
-    "librarian4": {
-        "firstname": "Melinda",
-        "lastname": "Muller",
-        "email": "test4@mail.com",
-        "address": "444 Muller Rd., Rexburg, ID",
-        "title": "Librarian",
-        "employee_number": "101004",
-        "start_date": "070522"
-    },
-
-    "librarian5": {
-        "firstname": "Sterling",
-        "lastname": "Tucker",
-        "email": "test5@mail.com",
-        "address": "555 Sterling Rd., Rexburg, ID",
-        "title": "Librarian",
-        "employee_number": "101005",
-        "start_date": "080523"
-    }
-    
-}
+[{
+  "id": 1,
+  "first_name": "Thadeus",
+  "last_name": "Redmain",
+  "email": "tredmain0@ow.ly",
+  "title": "Head Librarian",
+  "employee_num": "6045183975",
+  "start_date": "6/4/2023"
+}, {
+  "id": 2,
+  "first_name": "Brook",
+  "last_name": "Murrigan",
+  "email": "bmurrigan1@usda.gov",
+  "title": "Librarian",
+  "employee_num": "0275055035",
+  "start_date": "7/16/2023"
+}, {
+  "id": 3,
+  "first_name": "Anabella",
+  "last_name": "Semour",
+  "email": "asemour2@yellowbook.com",
+  "title": "Librarian",
+  "employee_num": "0355562448",
+  "start_date": "5/29/2023"
+}, {
+  "id": 4,
+  "first_name": "Burk",
+  "last_name": "Hollyland",
+  "email": "bhollyland3@smh.com.au",
+  "title": "Librarian",
+  "employee_num": "6596103528",
+  "start_date": "12/15/2023"
+}, {
+  "id": 5,
+  "first_name": "Kim",
+  "last_name": "Fraschini",
+  "email": "kfraschini4@home.pl",
+  "title": "Librarian",
+  "employee_num": "9714594383",
+  "start_date": "6/1/2023"
+}, {
+  "id": 6,
+  "first_name": "Monti",
+  "last_name": "Merrill",
+  "email": "mmerrill5@imdb.com",
+  "title": "Librarian",
+  "employee_num": "4386299610",
+  "start_date": "10/5/2023"
+}, {
+  "id": 7,
+  "first_name": "Ethyl",
+  "last_name": "McRamsey",
+  "email": "emcramsey6@noaa.gov",
+  "title": "Librarian",
+  "employee_num": "2166285090",
+  "start_date": "1/18/2024"
+}, {
+  "id": 8,
+  "first_name": "Ninon",
+  "last_name": "Hanington",
+  "email": "nhanington7@nasa.gov",
+  "title": "Librarian",
+  "employee_num": "7771344321",
+  "start_date": "2/13/2024"
+}, {
+  "id": 9,
+  "first_name": "Tobit",
+  "last_name": "Barker",
+  "email": "tbarker8@twitpic.com",
+  "title": "Librarian",
+  "employee_num": "5990654847",
+  "start_date": "5/15/2023"
+}, {
+  "id": 10,
+  "first_name": "Ludwig",
+  "last_name": "Mercy",
+  "email": "lmercy9@squidoo.com",
+  "title": "Librarian",
+  "employee_num": "7074975524",
+  "start_date": "3/2/2024"
+}]
