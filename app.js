@@ -13,10 +13,10 @@ const swaggerUi = require('swagger-ui-express');
 // const swaggerDocument = require('./swagger_output.json'); 
 
 const corsOptions = {
-    origin: 'http://localhost:8080', // change to render link https://[projectName].onrender.com
-    methods: 'GET,POST,PUT,DELETE',
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
+  origin: 'http://localhost:8080', // change to render link https://[projectName].onrender.com
+  methods: 'GET,POST,PUT,DELETE',
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
 };
 
 app.use(bodyParser.json());
@@ -26,18 +26,18 @@ app.use(express.static('public'));
 app.use(express.static('js'));
 
 app.use(cors(corsOptions));
-// app.use('/', require('./routes'));
+app.use('/', require('./routes'));
 // app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// mongodb.initDb((err, db) => {
-//     if (err) {
-//         console.log('Error connecting to the database');
-//         console.log(err);
-//       } else {
-//         console.log('Connected to the database');
-//       }
-// });
-// app.get(mongodb);
+mongodb.initDb((err, db) => {
+  if (err) {
+    console.log('Error connecting to the database');
+    console.log(err);
+  } else {
+    console.log('Connected to the database');
+  }
+});
+app.get(mongodb);
 
 // const outputFile = './swagger_output.json';
 const endpointsFiles = ['./routes/index.js'];
