@@ -10,10 +10,10 @@ const mongodb = require('./db/connect');
 const cors = require('cors');
 const swagger = require('swagger-autogen')();
 const swaggerUi = require('swagger-ui-express');
-// const swaggerDocument = require('./swagger_output.json'); 
+const swaggerDocument = require('./swagger_output.json'); 
 
 const corsOptions = {
-  origin: 'http://localhost:8080', // change to render link https://[projectName].onrender.com
+  origin: 'http://localhost:8080', // change to render link: https://[projectName].onrender.com
   methods: 'GET,POST,PUT,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204,
@@ -27,7 +27,7 @@ app.use(express.static('js'));
 
 app.use(cors(corsOptions));
 app.use('/', require('./routes'));
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 mongodb.initDb((err, db) => {
   if (err) {
@@ -39,7 +39,7 @@ mongodb.initDb((err, db) => {
 });
 app.get(mongodb);
 
-// const outputFile = './swagger_output.json';
+const outputFile = './swagger_output.json';
 const endpointsFiles = ['./routes/index.js'];
 
 const doc = {
@@ -48,14 +48,20 @@ const doc = {
       title: "library-management-app",
       description: "This app allows a library patron to view the books, movies, and music available, as well as which ones they have checked out.",
     },
-    host: "localhost:8080/", // change to render link [projectName].onrender.com
+    host: "localhost:8080/", // change to render link: [projectName].onrender.com
     basePath: "/",
 };
 
 const fs = require('fs');
-// if (!fs.existsSync(outputFile)) {
-  // swagger(outputFile, endpointsFiles, doc);
-// }
+
+// Only create a new swagger document if it doesn't already exist 
+if (!fs.existsSync(outputFile)) {
+
+  // We will need to re-run this line to update the swagger_output file, 
+  // after replacing localhost with the render link,
+  // OR after adding new routes to the routes index.js. 
+  swagger(outputFile, endpointsFiles, doc);
+}
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}.`)
