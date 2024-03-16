@@ -1,3 +1,24 @@
+/////GET/////
+
+///GET BOOK///
+GET http://localhost:8080/Books
+
+///GET Book by Id///
+###
+GET http://localhost:8080/Books/65f506c45935a52590f7f8ce
+
+///GET Movies///
+###
+GET http://localhost:8080/Movies
+
+///GET Music///
+###
+GET http://localhost:8080/Music
+
+///GET Patron///
+###
+GET http://localhost:8080/Patrons
+
 /////PUT/////
 
 ///CREATE BOOK///
