@@ -19,11 +19,11 @@ GET http://localhost:8080/Music
 ###
 GET http://localhost:8080/Patrons
 
-/////PUT/////
+/////POST/////
 
 ///CREATE BOOK///
 ### Create book
-POST http://localhost:3000/Books HTTP/1.1
+POST http://localhost:8080/Books HTTP/1.1
 content-type: application/json
 
 {
@@ -36,7 +36,7 @@ content-type: application/json
 
 ///CREATE MOVIE///
 ### Create movie
-POST http://localhost:3000/Movies HTTP/1.1
+POST http://localhost:8080/Movies HTTP/1.1
 content-type: application/json
 
 {
@@ -49,7 +49,7 @@ content-type: application/json
 
 ///CREATE MUSIC///
 ### Create music
-POST http://localhost:3000/Music HTTP/1.1
+POST http://localhost:8080/Music HTTP/1.1
 content-type: application/json
 
 {
@@ -61,11 +61,11 @@ content-type: application/json
 
 ///CREATE PATRON///
 ### Create patron
-POST http://localhost:3000/Patrons HTTP/1.1
+POST http://localhost:8080/Patrons HTTP/1.1
 content-type: application/json
 
 {
-    "id": "19",
+    "_id": "19",
     "first_name": "Roxanne",
     "last_name": "Mendez",
     "email": "RoxieM@gmail.com",
@@ -75,7 +75,7 @@ content-type: application/json
 
 ///CREATE LIBRARIAN///
 ### Create librarian
-POST http://localhost:3000/librarians HTTP/1.1
+POST http://localhost:8080/librarians HTTP/1.1
 content-type: application/json
 
 {
@@ -90,28 +90,88 @@ content-type: application/json
     "start_date": "2/05/2023"
 }
 
+/////PUT/////
+### Update book
+PUT http://localhost:8080/Books/65e3daa54ee1a147f2f479ed HTTP/1.1
+content-type: application/json
 
+{
+   "_id": "88",
+    "title": "The Way of Kings",
+    "author": "Brandon Sanderson",
+    "pages": "1007"
+}
+
+### Update movie
+PUT http://localhost:8080/Movies/65e3daa54ee1a147f2f479ed HTTP/1.1
+content-type: application/json
+
+{
+    "_id": "20",
+    "title": "The Hobbit",
+    "genre": "High Fantasy Adventure",
+    "length": "2h 49m"
+}
+
+### Update music
+PUT http://localhost:8080/Music/65e3daa54ee1a147f2f479ed HTTP/1.1
+content-type: application/json
+
+{
+    "_id": "19",
+    "song_title": "Strawberry Roan",
+    "album_title": "Marty Robbins the Complete Recordings 1952-1960",
+    "length": "5"
+}
+
+### Update patron
+PUT http://localhost:8080/Patrons/65e3daa54ee1a147f2f479ed HTTP/1.1
+content-type: application/json
+
+{
+    "_id": "19",
+    "first_name": "Roxanne",
+    "last_name": "Mendez",
+    "email": "RoxieM@gmail.com",
+    "address": "9300 S Mountain View Drive"
+}
+
+### Update librarian
+PUT http://localhost:8080/librarians/65e3daa54ee1a147f2f479ed HTTP/1.1
+content-type: application/json
+
+{
+    
+    "id": "5",
+    "first_name": "Elizabeth",
+    "last_name": "Martin",
+    "email": "LizbethM21@harperlib.com",
+    "address": "3101 TESS AVE NE",
+    "title": "Area Manager",
+    "employee_num": "3568946872",
+    "start_date": "2/05/2023"
+}
 
 /////DELETE/////
 ###Delete book
-DELETE http://localhost:3000/Books/65e3daa54ee1a147f2f479ed HTTP/1.1
+DELETE http://localhost:8080/Books/65e3daa54ee1a147f2f479ed HTTP/1.1
 
 ###Delete movie
-DELETE http://localhost:3000/Movies/65e3daa54ee1a147f2f479ed HTTP/1.1
+DELETE http://localhost:8080/Movies/65e3daa54ee1a147f2f479ed HTTP/1.1
 
 ###Delete music
-DELETE http://localhost:3000/Music/65e3daa54ee1a147f2f479ed HTTP/1.1
+DELETE http://localhost:8080/Music/65e3daa54ee1a147f2f479ed HTTP/1.1
 
 ###Delete patron
-DELETE http://localhost:3000/Patrons/65e3daa54ee1a147f2f479ed HTTP/1.1
+DELETE http://localhost:8080/Patrons/65e3daa54ee1a147f2f479ed HTTP/1.1
 
 ###Delete librarian
-DELETE http://localhost:3000/librarians/65e3daa54ee1a147f2f479ed HTTP/1.1
+DELETE http://localhost:8080/librarians/65e3daa54ee1a147f2f479ed HTTP/1.1
 
 
 
 
-// Production Deployment
+// Production Deployment - Render
 /////PUT/////
 
 ///Create book///
