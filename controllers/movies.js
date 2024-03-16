@@ -43,7 +43,27 @@ const getSingle = async (req, res) => {
     }
 };
 
-// post
+const createMovie = async (req, res) => {
+    try {
+        const movie = {
+            _id: req.body.id,
+            title: req.body.title,
+            genre: req.body.genre,
+            length: req.body.length
+        };  
+
+        const response = await mongodb.getDb().db().collection('movies').insertOne(movie);
+
+        if (response.acknowledged) {
+            res.status(200).json();
+        } else {
+            res.status(500).json(response.error || 'Some error occurred while creating the movie.');
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+};
 
 // put
 
