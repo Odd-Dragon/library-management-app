@@ -3,7 +3,7 @@ const app = express();
 
 // const bodyParser = require('body-parser');
 // const env = require('dotenv');
-const port = process.env.prot || 8080;
+const port = process.env.port || 8080;
 const env = require('dotenv').config();
 const mongodb = require('./db/connect');
 
