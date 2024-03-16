@@ -172,18 +172,10 @@ DELETE http://localhost:8080/librarians/65e3daa54ee1a147f2f479ed HTTP/1.1
 
 
 // Production Deployment - Render
-/////PUT/////
 
-///Create book///
-
-
-///Create movie///
+// For this we will just copy everything above, and change each link
+//  from localhost to the render link. 
+//  Do this AFTER all routes above have been completed. 
 
 
-///Create music///
 
-
-///Create patron///
-
-
-///Create librarian///
