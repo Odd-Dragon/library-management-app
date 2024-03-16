@@ -3,13 +3,13 @@ const { ObjectId } = require('mongodb');
 
 const getAll = async (req, res) => {
     try {
-        const musicsCursor = await mongodb.getDb().db().collection('Music').find();
+        const musicCollection = await mongodb.getDb().db().collection('Music').find();
 
         // Convert cursor to array using toArray() method
-        const musicsArray = await musicsCursor.toArray();
+        const musicArray = await musicCollection.toArray();
 
         // Send response with the array of books
-        res.status(200).json(musicsArray);
+        res.status(200).json(musicArray);
     } catch (error) {
         // Handle error
         console.error("Error occured while retrieving music:", error);
