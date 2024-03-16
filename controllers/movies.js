@@ -46,10 +46,31 @@ const getSingle = async (req, res) => {
 // post
 
 // put
+const updateMovie = async (req, res, next) => {
+    try {
+      const objectId = new ObjectId(req.params.id);
+      const movie = {
+        title : req.body.title,
+        genre : req.body.genre,
+        length : req.body.length
+      };
+      const response = await mongodb.getDb().db().collection('Movies').replaceOne({ _id: objectId }, movie);
+      if (response.acknowledged) {
+        res.status(204).json(response);
+      } else {
+        res.status(500).json(response.error || 'Error occurred while updating movie.');
+      };
+    } catch (error) {
+      console.error(error);
+    }
+}
 
 // delete
 
 module.exports = {     // add rest of function names
     getAll, 
-    getSingle
+    getSingle,
+
+    updateMovie,
+    
 }

@@ -46,10 +46,31 @@ const getSingle = async (req, res) => {
 // post
 
 // put
+const updateMusic = async (req, res, next) => {
+    try {
+      const objectId = new ObjectId(req.params.id);
+      const music = {
+        song_title : req.body.song_title,
+        album_title : req.body.album_title,
+        length : req.body.length
+      };
+      const response = await mongodb.getDb().db().collection('Music').replaceOne({ _id: objectId }, music);
+      if (response.acknowledged) {
+        res.status(204).json(response);
+      } else {
+        res.status(500).json(response.error || 'Error occurred while updating music.');
+      };
+    } catch (error) {
+      console.error(error);
+    }
+}
 
 // delete
 
 module.exports = {     // add rest of function names
     getAll, 
-    getSingle
+    getSingle,
+
+    updateMusic,
+    
 }
