@@ -3,10 +3,10 @@ const { ObjectId } = require('mongodb');
 
 const getAll = async (req, res) => {
     try {
-        const moviesCursor = await mongodb.getDb().db().collection('Movies').find();
+        const moviesCollection = await mongodb.getDb().db().collection('Movies').find();
 
         // Convert cursor to array using toArray() method
-        const moviesArray = await moviesCursor.toArray();
+        const moviesArray = await moviesCollection.toArray();
 
         // Send response with the array of movies
         res.status(200).json(moviesArray);

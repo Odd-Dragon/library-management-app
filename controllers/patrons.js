@@ -3,10 +3,10 @@ const { ObjectId } = require('mongodb');
 
 const getAll = async (req, res) => {
     try {
-        const patronsCursor = await mongodb.getDb().db().collection('Patrons').find();
+        const patronsCollection = await mongodb.getDb().db().collection('Patrons').find();
 
         // Convert cursor to array using toArray() method
-        const patronsArray = await patronsCursor.toArray();
+        const patronsArray = await patronsCollection.toArray();
 
         // Send response with the array of patrons
         res.status(200).json(patronsArray);
