@@ -3,7 +3,7 @@ const { ObjectId } = require('mongodb');
 
 const getAll = async (req, res) => {
     try {
-        const patronsCursor = await mongodb.getDb().db().collection('patrons').find();
+        const patronsCursor = await mongodb.getDb().db().collection('Patrons').find();
 
         // Convert cursor to array using toArray() method
         const patronsArray = await patronsCursor.toArray();
@@ -30,7 +30,7 @@ const getSingle = async (req, res) => {
         const objectId = new ObjectId(patronId);
 
         // Find patron by _id
-        const patron = await mongodb.getDb().db().collection('patrons').findOne({ _id: objectId });
+        const patron = await mongodb.getDb().db().collection('Patrons').findOne({ _id: objectId });
 
         if (patron) {
             res.status(200).json(patron);

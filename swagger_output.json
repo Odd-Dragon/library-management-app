@@ -5,14 +5,15 @@
     "title": "library-management-app",
     "description": "This app allows a library patron to view the books, movies, and music available, as well as which ones they have checked out."
   },
-  "host": "localhost:8080",
+  "host": "library-management-app-h2gk.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/books": {
       "get": {
+        "tags": ["Books"],
         "description": "",
         "responses": {
           "200": {
@@ -26,6 +27,7 @@
     },
     "/movies": {
       "get": {
+        "tags": ["Movies"],
         "description": "",
         "responses": {
           "200": {
@@ -39,6 +41,7 @@
     },
     "/music": {
       "get": {
+        "tags": ["Music"],
         "description": "",
         "responses": {
           "200": {
@@ -52,6 +55,7 @@
     },
     "/patrons": {
       "get": {
+        "tags": ["Patrons"],
         "description": "",
         "responses": {
           "200": {

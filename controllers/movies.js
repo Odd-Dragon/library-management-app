@@ -3,7 +3,7 @@ const { ObjectId } = require('mongodb');
 
 const getAll = async (req, res) => {
     try {
-        const moviesCursor = await mongodb.getDb().db().collection('movies').find();
+        const moviesCursor = await mongodb.getDb().db().collection('Movies').find();
 
         // Convert cursor to array using toArray() method
         const moviesArray = await moviesCursor.toArray();
@@ -30,7 +30,7 @@ const getSingle = async (req, res) => {
         const objectId = new ObjectId(movieId);
 
         // Find book by _id
-        const movie = await mongodb.getDb().db().collection('movies').findOne({ _id: objectId });
+        const movie = await mongodb.getDb().db().collection('Movies').findOne({ _id: objectId });
 
         if (movie) {
             res.status(200).json(movie);
