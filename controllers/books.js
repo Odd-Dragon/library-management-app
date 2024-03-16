@@ -45,10 +45,31 @@ const getSingle = async (req, res) => {
 // post
 
 // put
+const updateBook = async (req, res, next) => {
+    try {
+      const objectId = new ObjectId(req.params.id);
+      const book = {
+        title : req.body.title,
+        author : req.body.author,
+        pages : req.body.pages
+      };
+      const response = await mongodb.getDb().db().collection('Books').replaceOne({ _id: objectId }, book);
+      if (response.acknowledged) {
+        res.status(204).json(response);
+      } else {
+        res.status(500).json(response.error || 'Error occurred while updating book.');
+      };
+    } catch (error) {
+      console.error(error);
+    }
+}
 
 // delete
 
 module.exports = {     // add rest of function names
     getAll, 
-    getSingle
+    getSingle, 
+
+    updateBook,
+
 }

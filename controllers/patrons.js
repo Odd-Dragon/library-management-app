@@ -46,10 +46,40 @@ const getSingle = async (req, res) => {
 // post
 
 // put
+const updatePatron = async (req, res, next) => {
+    try {
+      const patronId = req.params.id;
+
+      // Validate patronId
+      if (!ObjectId.isValid(patronId)) {
+        return res.status(400).json({ error: 'Invalid patron ID' });
+    }
+
+      const objectId = new ObjectId(patronId);
+
+      const patron = {
+        first_name : req.body.first_name,
+        last_name : req.body.last_name,
+        email : req.body.email,
+        address : req.body.address
+      };
+      const response = await mongodb.getDb().db().collection('Patrons').replaceOne({ _id: objectId }, patron);
+      if (response.acknowledged) {
+        res.status(204).json(response);
+      } else {
+        res.status(500).json(response.error || 'Error occurred while updating patron.');
+      };
+    } catch (error) {
+      console.error(error);
+    }
+}
 
 // delete
 
 module.exports = {     // add rest of function names
     getAll, 
-    getSingle
+    getSingle,
+
+    updatePatron,
+    
 }
