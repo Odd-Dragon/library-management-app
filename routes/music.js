@@ -9,7 +9,7 @@ router.get('/', musicController.getAll);
 
 router.get('/:id', musicController.getSingle);
 
-// post - include requiresAuth
+router.post('/', validateMusic, musicController.createMusic);
 
 // put - include requiresAuth
 

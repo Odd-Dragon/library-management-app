@@ -9,7 +9,7 @@ router.get('/', booksController.getAll);
 
 router.get('/:id', booksController.getSingle);
 
-// post - include requiresAuth
+router.post('/', validateBook, booksController.createBook);
 
 // put - include requiresAuth
 

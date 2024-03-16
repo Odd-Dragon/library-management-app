@@ -51,5 +51,7 @@ const getSingle = async (req, res) => {
 
 module.exports = {     // add rest of function names
     getAll, 
-    getSingle
+    getSingle,
+    createMovie,
+    deleteMovie,
 }

@@ -9,7 +9,7 @@ router.get('/', moviesController.getAll);
 
 router.get('/:id', moviesController.getSingle);
 
-// post - include requiresAuth
+router.post('/', validateMovie, moviesController.createMovie);
 
 // put - include requiresAuth
 

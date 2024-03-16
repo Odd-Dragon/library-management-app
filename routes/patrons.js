@@ -9,7 +9,7 @@ router.get('/', patronsController.getAll);
 
 router.get('/:id', patronsController.getSingle);
 
-// post - include requiresAuth
+router.post('/', validatePatron, patronsController.createPatron);
 
 // put - include requiresAuth
 

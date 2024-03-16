@@ -43,7 +43,27 @@ const getSingle = async (req, res) => {
     }
 };
 
-// post
+const createBook = async (req, res) => {
+    try {
+        const book = {
+            _id: req.body.id,
+            title: req.body.title,
+            author: req.body.author,
+            pages: req.body.pages
+        };  
+
+        const response = await mongodb.getDb().db().collection('books').insertOne(book);
+
+        if (response.acknowledged) {
+            res.status(200).json();
+        } else {
+            res.status(500).json(response.error || 'Some error occurred while creating the book.');
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+};
 
 // put
 
@@ -51,5 +71,7 @@ const getSingle = async (req, res) => {
 
 module.exports = {     // add rest of function names
     getAll, 
-    getSingle
+    getSingle,
+    createBook,
+    deleteBook,
 }
