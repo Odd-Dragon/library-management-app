@@ -24,7 +24,7 @@
     "books/": {
       "get": {
         "tags": ["Books"],
-        "description": "",
+        "description": "Get all books",
         "responses": {
           "200": {
             "description": "OK"
@@ -36,7 +36,7 @@
       },
       "post": {
         "tags": ["Books"],
-        "description": "",
+        "description": "Create new book",
         "parameters": [
           {
             "name": "body",
@@ -73,7 +73,7 @@
     "books/{id}": {
       "get": {
         "tags": ["Books"],
-        "description": "",
+        "description": "Get book by ID",
         "parameters": [
           {
             "name": "id",
@@ -99,7 +99,7 @@
       },
       "put": {
         "tags": ["Books"],
-        "description": "",
+        "description": "Update book by ID",
         "parameters": [
           {
             "name": "id",
@@ -137,7 +137,7 @@
       },
       "delete": {
         "tags": ["Books"],
-        "description": "",
+        "description": "Delete book",
         "parameters": [
           {
             "name": "id",
@@ -165,7 +165,7 @@
     "movies/": {
       "get": {
         "tags": ["Movies"],
-        "description": "",
+        "description": "Get all movies",
         "responses": {
           "200": {
             "description": "OK"
@@ -177,7 +177,7 @@
       },
       "post": {
         "tags": ["Movies"],
-        "description": "",
+        "description": "Create new movie",
         "parameters": [
           {
             "name": "body",
@@ -214,7 +214,7 @@
     "movies/{id}": {
       "get": {
         "tags": ["Movies"],
-        "description": "",
+        "description": "Get movie by ID",
         "parameters": [
           {
             "name": "id",
@@ -240,7 +240,7 @@
       },
       "put": {
         "tags": ["Movies"],
-        "description": "",
+        "description": "Update movie by ID",
         "parameters": [
           {
             "name": "id",
@@ -278,7 +278,7 @@
       },
       "delete": {
         "tags": ["Movies"],
-        "description": "",
+        "description": "Delete movie",
         "parameters": [
           {
             "name": "id",
@@ -306,7 +306,7 @@
     "music/": {
       "get": {
         "tags": ["Music"],
-        "description": "",
+        "description": "Get all music",
         "responses": {
           "200": {
             "description": "OK"
@@ -318,7 +318,7 @@
       },
       "post": {
         "tags": ["Music"],
-        "description": "",
+        "description": "Create new music",
         "parameters": [
           {
             "name": "body",
@@ -355,7 +355,7 @@
     "music/{id}": {
       "get": {
         "tags": ["Music"],
-        "description": "",
+        "description": "Get music by ID",
         "parameters": [
           {
             "name": "id",
@@ -381,7 +381,7 @@
       },
       "put": {
         "tags": ["Music"],
-        "description": "",
+        "description": "Update music",
         "parameters": [
           {
             "name": "id",
@@ -419,7 +419,7 @@
       },
       "delete": {
         "tags": ["Music"],
-        "description": "",
+        "description": "Delete music",
         "parameters": [
           {
             "name": "id",
@@ -447,7 +447,7 @@
     "patrons/": {
       "get": {
         "tags": ["Patrons"],
-        "description": "",
+        "description": "Get all patrons",
         "responses": {
           "200": {
             "description": "OK"
@@ -459,7 +459,7 @@
       },
       "post": {
         "tags": ["Patrons"],
-        "description": "",
+        "description": "Create new patron",
         "parameters": [
           {
             "name": "body",
@@ -499,7 +499,7 @@
     "patrons/{id}": {
       "get": {
         "tags": ["Patrons"],
-        "description": "",
+        "description": "Get patron by ID",
         "parameters": [
           {
             "name": "id",
@@ -525,7 +525,7 @@
       },
       "put": {
         "tags": ["Patrons"],
-        "description": "",
+        "description": "Update patron by ID",
         "parameters": [
           {
             "name": "id",
@@ -569,7 +569,7 @@
       },
       "delete": {
         "tags": ["Patrons"],
-        "description": "",
+        "description": "Delete patron",
         "parameters": [
           {
             "name": "id",
@@ -597,7 +597,7 @@
     "librarians/": {
       "get": {
         "tags": ["Librarians"],
-        "description": "",
+        "description": "Get all librarians",
         "responses": {
           "200": {
             "description": "OK"
@@ -611,7 +611,7 @@
     "librarians/{id}": {
       "get": {
         "tags": ["Librarians"],
-        "description": "",
+        "description": "Get librarians by ID",
         "parameters": [
           {
             "name": "id",
