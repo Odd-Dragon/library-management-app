@@ -16,8 +16,8 @@ app.use(express.static('public'));
 app.use(express.static('js'));
 
 const corsOptions = {
-  // origin: 'http://localhost:8080'
-  origin: 'https://library-management-app-h2gk.onrender.com',
+  origin: 'http://localhost:8080',
+  // origin: 'https://library-management-app-h2gk.onrender.com',
   methods: 'GET,POST,PUT,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204,
@@ -46,8 +46,8 @@ const doc = {
       title: "library-management-app",
       description: "This app allows a library patron to view the books, movies, and music available, as well as which ones they have checked out.",
     },
-    // host: "localhost:8080/"
-    host: "library-management-app-h2gk.onrender.com/",
+    host: "localhost:8080/",
+    // host: "library-management-app-h2gk.onrender.com/",
     basePath: "/",
 };
 

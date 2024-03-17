@@ -9,10 +9,13 @@ router.get('/', musicController.getAll);
 
 router.get('/:id', musicController.getSingle);
 
-// post - include requiresAuth
+router.post('/', musicController.createMusic);
+            // post - include requiresAuth
 
-// put - include requiresAuth
+router.put('/:id', musicController.updateMusic);
+            // put - include requiresAuth
 
-// delete - include requiresAuth
+router.delete('/:id', musicController.deleteMusic);
+            // delete - include requiresAuth
 
 module.exports = router;
