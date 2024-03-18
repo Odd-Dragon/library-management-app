@@ -9,10 +9,13 @@ router.get('/', booksController.getAll);
 
 router.get('/:id', booksController.getSingle);
 
-router.post('/', validateBook, booksController.createBook);
+router.post('/', booksController.createBook);
+              // post - include requiresAuth
 
-// put - include requiresAuth
+router.put('/:id', booksController.updateBook);
+              // put - include requiresAuth
 
-// delete - include requiresAuth
+router.delete('/:id', booksController.deleteBook);
+              // delete - include requiresAuth
 
 module.exports = router;

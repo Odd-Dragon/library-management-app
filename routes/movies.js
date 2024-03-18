@@ -9,10 +9,13 @@ router.get('/', moviesController.getAll);
 
 router.get('/:id', moviesController.getSingle);
 
-router.post('/', validateMovie, moviesController.createMovie);
+router.post('/', moviesController.createMovie);
+            // post - include requiresAuth
 
-// put - include requiresAuth
+router.put('/:id', moviesController.updateMovie);
+            // put - include requiresAuth
 
-// delete - include requiresAuth
+router.delete('/:id', moviesController.deleteMovie);
+            // delete - include requiresAuth
 
 module.exports = router;

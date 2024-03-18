@@ -3,13 +3,13 @@ const { ObjectId } = require('mongodb');
 
 const getAll = async (req, res) => {
     try {
-        const musicsCursor = await mongodb.getDb().db().collection('musics').find();
+        const musicCollection = await mongodb.getDb().db().collection('Music').find();
 
         // Convert cursor to array using toArray() method
-        const musicsArray = await musicsCursor.toArray();
+        const musicArray = await musicCollection.toArray();
 
         // Send response with the array of books
-        res.status(200).json(musicsArray);
+        res.status(200).json(musicArray);
     } catch (error) {
         // Handle error
         console.error("Error occured while retrieving music:", error);
@@ -30,7 +30,7 @@ const getSingle = async (req, res) => {
         const objectId = new ObjectId(musicId);
 
         // Find music by _id
-        const music = await mongodb.getDb().db().collection('musics').findOne({ _id: objectId });
+        const music = await mongodb.getDb().db().collection('Music').findOne({ _id: objectId });
 
         if (music) {
             res.status(200).json(music);
@@ -43,16 +43,26 @@ const getSingle = async (req, res) => {
     }
 };
 
+// post
 const createMusic = async (req, res) => {
     try {
+        // Check if song title, album title and length are provided in the request body
+        if (!req.body.song_title || !req.body.album_title || !req.body.length) {
+            return res.status(400).json({ error: 'Song and album titles and length are required fields' });
+        }
+
+        // Check if song title and album title are strings and length is a number
+        if (typeof req.body.song_title !== 'string' || typeof req.body.album_title !== 'string' || typeof req.body.length !== 'number') {
+            return res.status(400).json({ error: 'Song and album titles must be strings and length must be a number' });
+        }
+
         const music = {
-            _id: req.body.id,
             song_title: req.body.song_title,
             album_title: req.body.album_title,
             length: req.body.length
         };  
 
-        const response = await mongodb.getDb().db().collection('musics').insertOne(music);
+        const response = await mongodb.getDb().db().collection('Music').insertOne(music);
 
         if (response.acknowledged) {
             res.status(200).json();
@@ -66,12 +76,54 @@ const createMusic = async (req, res) => {
 };
 
 // put
+const updateMusic = async (req, res, next) => {
+    try {
+      const objectId = new ObjectId(req.params.id);
+      const music = {
+        song_title : req.body.song_title,
+        album_title : req.body.album_title,
+        length : req.body.length
+      };
+      const response = await mongodb.getDb().db().collection('Music').replaceOne({ _id: objectId }, music);
+      if (response.acknowledged) {
+        res.status(204).json(response);
+      } else {
+        res.status(500).json(response.error || 'Error occurred while updating music.');
+      };
+    } catch (error) {
+      console.error(error);
+    }
+}
 
 // delete
+const deleteMusic = async (req, res) => {
+    try {
+        // Validate musicId
+        const musicId = req.params.id;
+        if (!ObjectId.isValid(musicId)) {
+            return res.status(400).json({ error: 'Invalid music ID '});
+        }
+        // Convert musicId to ObjectId
+        const objectId = new ObjectId(musicId);
 
-module.exports = {     // add rest of function names
+        // Delete the music from the database
+        const response = await mongodb.getDb().db().collection('Music').deleteOne({ _id:objectId });
+
+        if (response.deletedCount > 0) {
+            res.status(200).send();
+        } else {
+            res.status(404).json({ error: 'Music not found '});
+        }
+    } catch (error) {
+        console.error("Error occured while deleting music", error);
+        res.status(500).json({ error: "Internal server error "});
+    }
+}
+
+module.exports = {
     getAll, 
     getSingle,
     createMusic,
-    deleteMusic,
+    updateMusic,
+    deleteMusic
 }

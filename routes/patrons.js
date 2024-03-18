@@ -9,10 +9,13 @@ router.get('/', patronsController.getAll);
 
 router.get('/:id', patronsController.getSingle);
 
-router.post('/', validatePatron, patronsController.createPatron);
+router.post('/', patronsController.createPatron);
+            // post - include requiresAuth
 
-// put - include requiresAuth
+router.put('/:id', patronsController.updatePatron);
+            // put - include requiresAuth
 
-// delete - include requiresAuth
+router.delete('/:id', patronsController.deletePatron);
+            // delete - include requiresAuth
 
 module.exports = router;

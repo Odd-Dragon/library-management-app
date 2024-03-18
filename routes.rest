@@ -1,50 +1,72 @@
-/////PUT/////
+/////GET/////
+
+///GET BOOK///
+GET http://localhost:8080/Books
+
+///GET Book by Id///
+###
+GET http://localhost:8080/Books/65f63aaf5935a52590f7f8e5
+
+///GET Movies///
+###
+GET http://localhost:8080/Movies/65f63bb45935a52590f7fa20
+
+///GET Music///
+###
+GET http://localhost:8080/Music/65f63b7f5935a52590f7f9bb
+
+///GET Patron///
+###
+GET http://localhost:8080/Patrons/65f63b3c5935a52590f7f954
+
+///GET Librarian///
+###
+GET http://localhost:8080/librarians/65f325de6b0d0267a1323622
+
+/////POST/////
 
 ///CREATE BOOK///
 ### Create book
-POST http://localhost:3000/Books HTTP/1.1
+POST http://localhost:8080/Books HTTP/1.1
 content-type: application/json
 
 {
-   "_id": "88",
+   
     "title": "The Way of Kings",
     "author": "Brandon Sanderson",
-    "pages": "1007"
+    "pages": 1007
 }
 
 
 ///CREATE MOVIE///
 ### Create movie
-POST http://localhost:3000/Movies HTTP/1.1
+POST http://localhost:8080/Movies HTTP/1.1
 content-type: application/json
 
 {
-    "_id": "20",
     "title": "The Hobbit",
     "genre": "High Fantasy Adventure",
-    "length": "2h 49m"
+    "length": 3
 }
 
 
 ///CREATE MUSIC///
 ### Create music
-POST http://localhost:3000/Music HTTP/1.1
+POST http://localhost:8080/Music HTTP/1.1
 content-type: application/json
 
 {
-    "_id": "19",
     "song_title": "Strawberry Roan",
     "album_title": "Marty Robbins the Complete Recordings 1952-1960",
-    "length": "5"
+    "length": 5
 }
 
 ///CREATE PATRON///
 ### Create patron
-POST http://localhost:3000/Patrons HTTP/1.1
+POST http://localhost:8080/Patrons HTTP/1.1
 content-type: application/json
 
 {
-    "id": "19",
     "first_name": "Roxanne",
     "last_name": "Mendez",
     "email": "RoxieM@gmail.com",
@@ -54,7 +76,7 @@ content-type: application/json
 
 ///CREATE LIBRARIAN///
 ### Create librarian
-POST http://localhost:3000/librarians HTTP/1.1
+POST http://localhost:8080/librarians HTTP/1.1
 content-type: application/json
 
 {
@@ -69,40 +91,89 @@ content-type: application/json
     "start_date": "2/05/2023"
 }
 
+/////PUT/////
+### Update book
+PUT http://localhost:8080/Books/65f63aaf5935a52590f7f8e4 HTTP/1.1
+content-type: application/json
 
+{
+    "title": "Way of Kings, The",
+    "author": "Sanderson, Brandon",
+    "pages": 1007
+}
+
+### Update movie
+PUT http://localhost:8080/Movies/65f634f182fd22bad6550c30 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Hobbit, The",
+    "genre": "High Fantasy Adventure",
+    "length": 3
+}
+
+### Update music
+PUT http://localhost:8080/Music/65f63b7f5935a52590f7f9ba HTTP/1.1
+content-type: application/json
+
+{
+    "id": "65f63b7f5935a52590f7f9ba",
+    "song_title": "Strawberry Roan",
+    "album_title": "Marty Robbins the Complete Recordings 1952-1960",
+    "length": 6
+}
+
+### Update patron
+PUT http://localhost:8080/Patrons/65f6351c82fd22bad6550c32 HTTP/1.1
+content-type: application/json
+
+{
+    "first_name": "Roxanne",
+    "last_name": "Mendez",
+    "email": "RoxieM@gmail.com",
+    "address": "9300 S Mountain View Dr."
+}
+
+### Update librarian
+PUT http://localhost:8080/librarians/65e3daa54ee1a147f2f479ed HTTP/1.1
+content-type: application/json
+
+{
+    
+    "id": "5",
+    "first_name": "Elizabeth",
+    "last_name": "Martin",
+    "email": "LizbethM21@harperlib.com",
+    "address": "3101 TESS AVE NE",
+    "title": "Area Manager",
+    "employee_num": "3568946872",
+    "start_date": "2/05/2023"
+}
 
 /////DELETE/////
 ###Delete book
-DELETE http://localhost:3000/Books/65e3daa54ee1a147f2f479ed HTTP/1.1
+DELETE http://localhost:8080/Books/65f63ece24455ef5e5e109f8 HTTP/1.1
 
 ###Delete movie
-DELETE http://localhost:3000/Movies/65e3daa54ee1a147f2f479ed HTTP/1.1
+DELETE http://localhost:8080/Movies/65f63bb45935a52590f7fa20 HTTP/1.1
 
 ###Delete music
-DELETE http://localhost:3000/Music/65e3daa54ee1a147f2f479ed HTTP/1.1
+DELETE http://localhost:8080/Music/65f63b7f5935a52590f7f9ba HTTP/1.1
 
 ###Delete patron
-DELETE http://localhost:3000/Patrons/65e3daa54ee1a147f2f479ed HTTP/1.1
+DELETE http://localhost:8080/Patrons/65f640e54a1085b2c0b67408 HTTP/1.1
 
 ###Delete librarian
-DELETE http://localhost:3000/librarians/65e3daa54ee1a147f2f479ed HTTP/1.1
+DELETE http://localhost:8080/librarians/65e3daa54ee1a147f2f479ed HTTP/1.1
 
 
 
 
-// Production Deployment
-/////PUT/////
+// Production Deployment - Render
 
-///Create book///
-
-
-///Create movie///
+// For this we will just copy everything above, and change each link
+//  from localhost to the render link. 
+//  Do this AFTER all routes above have been completed. 
 
 
-///Create music///
 
-
-///Create patron///
-
-
-///Create librarian///
