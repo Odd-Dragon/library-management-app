@@ -3,19 +3,18 @@ const router = express.Router();
 
 const booksController = require('../controllers/books');
 
-// const { requiresAuth } = require('express-openid-connect');  // wait until add Auth0
+const { requiresAuth } = require('express-openid-connect');
 
 router.get('/', booksController.getAll);
 
 router.get('/:id', booksController.getSingle);
 
+// Middleware to require authentication for POST, PUT, and DELETE
+router.use(requiresAuth());
+
+// Routes that require authentication
 router.post('/', booksController.createBook);
-              // post - include requiresAuth
-
 router.put('/:id', booksController.updateBook);
-              // put - include requiresAuth
-
 router.delete('/:id', booksController.deleteBook);
-              // delete - include requiresAuth
 
 module.exports = router;

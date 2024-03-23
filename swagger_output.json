@@ -11,12 +11,12 @@
     "https"
   ],
   "paths": {
-    "/api-docs": {
+    "api-docs": {
       "get": {
-        "description": "",
+        "summary": "",
         "responses": {
           "default": {
-            "description": ""
+            "summary": ""
           }
         }
       }
@@ -24,19 +24,19 @@
     "books/": {
       "get": {
         "tags": ["Books"],
-        "description": "Get all books",
+        "summary": "Get all books",
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "post": {
         "tags": ["Books"],
-        "description": "Create new book",
+        "summary": "Create new book",
         "parameters": [
           {
             "name": "body",
@@ -59,13 +59,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       }
@@ -73,7 +73,7 @@
     "books/{id}": {
       "get": {
         "tags": ["Books"],
-        "description": "Get book by ID",
+        "summary": "Get book by ID",
         "parameters": [
           {
             "name": "id",
@@ -84,22 +84,22 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "404": {
-            "description": "Not Found"
+            "summary": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "put": {
         "tags": ["Books"],
-        "description": "Update book by ID",
+        "summary": "Update book by ID",
         "parameters": [
           {
             "name": "id",
@@ -128,16 +128,16 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "summary": "No Content"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "delete": {
         "tags": ["Books"],
-        "description": "Delete book",
+        "summary": "Delete book",
         "parameters": [
           {
             "name": "id",
@@ -148,16 +148,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "404": {
-            "description": "Not Found"
+            "summary": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       }
@@ -165,19 +165,19 @@
     "movies/": {
       "get": {
         "tags": ["Movies"],
-        "description": "Get all movies",
+        "summary": "Get all movies",
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "post": {
         "tags": ["Movies"],
-        "description": "Create new movie",
+        "summary": "Create new movie",
         "parameters": [
           {
             "name": "body",
@@ -200,13 +200,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       }
@@ -214,7 +214,7 @@
     "movies/{id}": {
       "get": {
         "tags": ["Movies"],
-        "description": "Get movie by ID",
+        "summary": "Get movie by ID",
         "parameters": [
           {
             "name": "id",
@@ -225,22 +225,22 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "404": {
-            "description": "Not Found"
+            "summary": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "put": {
         "tags": ["Movies"],
-        "description": "Update movie by ID",
+        "summary": "Update movie by ID",
         "parameters": [
           {
             "name": "id",
@@ -269,16 +269,16 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "summary": "No Content"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "delete": {
         "tags": ["Movies"],
-        "description": "Delete movie",
+        "summary": "Delete movie",
         "parameters": [
           {
             "name": "id",
@@ -289,16 +289,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "404": {
-            "description": "Not Found"
+            "summary": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       }
@@ -306,19 +306,19 @@
     "music/": {
       "get": {
         "tags": ["Music"],
-        "description": "Get all music",
+        "summary": "Get all music",
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "post": {
         "tags": ["Music"],
-        "description": "Create new music",
+        "summary": "Create new music",
         "parameters": [
           {
             "name": "body",
@@ -341,13 +341,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       }
@@ -355,7 +355,7 @@
     "music/{id}": {
       "get": {
         "tags": ["Music"],
-        "description": "Get music by ID",
+        "summary": "Get music by ID",
         "parameters": [
           {
             "name": "id",
@@ -366,22 +366,22 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "404": {
-            "description": "Not Found"
+            "summary": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "put": {
         "tags": ["Music"],
-        "description": "Update music",
+        "summary": "Update music",
         "parameters": [
           {
             "name": "id",
@@ -410,16 +410,16 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "summary": "No Content"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "delete": {
         "tags": ["Music"],
-        "description": "Delete music",
+        "summary": "Delete music",
         "parameters": [
           {
             "name": "id",
@@ -430,16 +430,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "404": {
-            "description": "Not Found"
+            "summary": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       }
@@ -447,19 +447,19 @@
     "patrons/": {
       "get": {
         "tags": ["Patrons"],
-        "description": "Get all patrons",
+        "summary": "Get all patrons",
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "post": {
         "tags": ["Patrons"],
-        "description": "Create new patron",
+        "summary": "Create new patron",
         "parameters": [
           {
             "name": "body",
@@ -485,13 +485,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       }
@@ -499,7 +499,7 @@
     "patrons/{id}": {
       "get": {
         "tags": ["Patrons"],
-        "description": "Get patron by ID",
+        "summary": "Get patron by ID",
         "parameters": [
           {
             "name": "id",
@@ -510,22 +510,22 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "404": {
-            "description": "Not Found"
+            "summary": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "put": {
         "tags": ["Patrons"],
-        "description": "Update patron by ID",
+        "summary": "Update patron by ID",
         "parameters": [
           {
             "name": "id",
@@ -557,19 +557,19 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "summary": "No Content"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       },
       "delete": {
         "tags": ["Patrons"],
-        "description": "Delete patron",
+        "summary": "Delete patron",
         "parameters": [
           {
             "name": "id",
@@ -580,16 +580,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "404": {
-            "description": "Not Found"
+            "summary": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       }
@@ -597,13 +597,13 @@
     "librarians/": {
       "get": {
         "tags": ["Librarians"],
-        "description": "Get all librarians",
+        "summary": "Get all librarians",
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       }
@@ -611,7 +611,7 @@
     "librarians/{id}": {
       "get": {
         "tags": ["Librarians"],
-        "description": "Get librarians by ID",
+        "summary": "Get librarians by ID",
         "parameters": [
           {
             "name": "id",
@@ -622,16 +622,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "summary": "OK"
           },
           "400": {
-            "description": "Bad Request"
+            "summary": "Bad Request"
           },
           "404": {
-            "description": "Not Found"
+            "summary": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error"
+            "summary": "Internal Server Error"
           }
         }
       }
