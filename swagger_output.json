@@ -5,7 +5,7 @@
     "title": "library-management-app",
     "description": "This app allows a library patron to view the books, movies, and music available, as well as which ones they have checked out.\n\n login: https://library-management-app-h2gk.onrender.com/login \n profile: https://library-management-app-h2gk.onrender.com/profile \n logout: https://library-management-app-h2gk.onrender.com/logout"
   },
-  "host": "library-management-app-h2gk.onrender.com",
+  "host": "library-management-app-h2gk.onrender.com/",
   "basePath": "/",
   "schemes": [
     "https"
