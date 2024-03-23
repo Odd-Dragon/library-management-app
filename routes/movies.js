@@ -3,19 +3,18 @@ const router = express.Router();
 
 const moviesController = require('../controllers/movies');
 
-// const { requiresAuth } = require('express-openid-connect');  // wait until add Auth0
+const { requiresAuth } = require('express-openid-connect');
 
 router.get('/', moviesController.getAll);
 
 router.get('/:id', moviesController.getSingle);
 
+// Middleware to require authentication for POST, PUT, and DELETE
+router.use(requiresAuth());
+
+// Routes that require authentication
 router.post('/', moviesController.createMovie);
-            // post - include requiresAuth
-
 router.put('/:id', moviesController.updateMovie);
-            // put - include requiresAuth
-
 router.delete('/:id', moviesController.deleteMovie);
-            // delete - include requiresAuth
 
 module.exports = router;

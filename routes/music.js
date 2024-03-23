@@ -3,19 +3,18 @@ const router = express.Router();
 
 const musicController = require('../controllers/music');
 
-// const { requiresAuth } = require('express-openid-connect');  // wait until add Auth0
+const { requiresAuth } = require('express-openid-connect');
 
 router.get('/', musicController.getAll);
 
 router.get('/:id', musicController.getSingle);
 
+// Middleware to require authentication for POST, PUT, and DELETE
+router.use(requiresAuth());
+
+// Routes that require authentication
 router.post('/', musicController.createMusic);
-            // post - include requiresAuth
-
 router.put('/:id', musicController.updateMusic);
-            // put - include requiresAuth
-
 router.delete('/:id', musicController.deleteMusic);
-            // delete - include requiresAuth
 
 module.exports = router;

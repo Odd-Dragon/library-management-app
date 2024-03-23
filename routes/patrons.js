@@ -3,19 +3,18 @@ const router = express.Router();
 
 const patronsController = require('../controllers/patrons');
 
-// const { requiresAuth } = require('express-openid-connect');  // wait until add Auth0
+const { requiresAuth } = require('express-openid-connect');  // wait until add Auth0
 
 router.get('/', patronsController.getAll);
 
 router.get('/:id', patronsController.getSingle);
 
+// Middleware to require authentication for POST, PUT, and DELETE
+router.use(requiresAuth());
+
+// Routes that require authentication
 router.post('/', patronsController.createPatron);
-            // post - include requiresAuth
-
 router.put('/:id', patronsController.updatePatron);
-            // put - include requiresAuth
-
 router.delete('/:id', patronsController.deletePatron);
-            // delete - include requiresAuth
 
 module.exports = router;

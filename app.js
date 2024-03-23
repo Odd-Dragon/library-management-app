@@ -5,10 +5,35 @@ const port = process.env.port || 8080;
 const env = require('dotenv').config();
 const mongodb = require('./db/connect');
 
+//-----------------------------------------------------
+//OAuth (auth0.com)
+const { auth, requiresAuth } = require('express-openid-connect');
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: process.env.SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER_BASE_URL,
+};
+
+// auth router attaches /login, /logout, and /callback routes to baseURL
+app.use(auth(config));
+
+// req.isAuthenticated is provided from auth router
+app.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
+
+app.get('/profile', requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
+});
+//----------------------------------------------------------
+
 const cors = require('cors');
 const swagger = require('swagger-autogen')();
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger_output.json'); 
+const swaggerDocument = require('./swagger_output_local.json');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -16,8 +41,8 @@ app.use(express.static('public'));
 app.use(express.static('js'));
 
 const corsOptions = {
-  // origin: 'http://localhost:8080',
-  origin: 'https://library-management-app-h2gk.onrender.com',
+  origin: 'http://localhost:8080',
+  // origin: 'https://library-management-app-h2gk.onrender.com',
   methods: 'GET,POST,PUT,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204,
