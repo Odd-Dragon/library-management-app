@@ -33,7 +33,7 @@ app.get('/profile', requiresAuth(), (req, res) => {
 const cors = require('cors');
 const swagger = require('swagger-autogen')();
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger_output_local.json');
+const swaggerDocument = require('./swagger_output.json');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -41,8 +41,8 @@ app.use(express.static('public'));
 app.use(express.static('js'));
 
 const corsOptions = {
-  origin: 'http://localhost:8080',
-  // origin: 'https://library-management-app-h2gk.onrender.com',
+  // origin: 'http://localhost:8080',
+  origin: 'https://library-management-app-h2gk.onrender.com',
   methods: 'GET,POST,PUT,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204,
