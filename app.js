@@ -6,7 +6,7 @@ const env = require('dotenv').config();
 const mongodb = require('./db/connect');
 
 // -----------------------------------------------------
-OAuth (auth0.com)
+// ----------------OAuth (auth0.com)--------------------
 const { auth, requiresAuth } = require('express-openid-connect');
 const config = {
   authRequired: false,
