@@ -5,8 +5,8 @@ const port = process.env.port || 8080;
 const env = require('dotenv').config();
 const mongodb = require('./db/connect');
 
-//-----------------------------------------------------
-//OAuth (auth0.com)
+// -----------------------------------------------------
+OAuth (auth0.com)
 const { auth, requiresAuth } = require('express-openid-connect');
 const config = {
   authRequired: false,
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 app.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user));
 });
-//----------------------------------------------------------
+// ----------------------------------------------------------
 
 const cors = require('cors');
 const swagger = require('swagger-autogen')();

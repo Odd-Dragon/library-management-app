@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,10 @@
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.0",
     "timers-browserify": "^2.0.12"
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^4.2.0",
+    "preset": "@shelf/jest-mongodb",
+    "jest": "^29.7.0"
   }
 }
