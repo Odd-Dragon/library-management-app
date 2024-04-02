@@ -3,7 +3,6 @@ const router = express.Router();
 
 router
     .use('/', require('./swagger'))
-    .use('/', require('../__tests__/test'))
     .use('/books', require('./books'))
     .use('/movies', require('./movies'))
     .use('/music', require('./music'))
