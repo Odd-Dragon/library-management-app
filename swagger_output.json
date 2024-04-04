@@ -5,10 +5,11 @@
     "title": "library-management-app",
     "description": "This app allows a library patron to view the books, movies, and music available, as well as which ones they have checked out.\n\n login: https://library-management-app-h2gk.onrender.com/login \n profile: https://library-management-app-h2gk.onrender.com/profile \n logout: https://library-management-app-h2gk.onrender.com/logout"
   },
-  "host": "library-management-app-h2gk.onrender.com/",
+  "host": "localhost:8080/",
+  "webhost": "library-management-app-h2gk.onrender.com/",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "api-docs": {
@@ -571,48 +572,6 @@
       "delete": {
         "tags": ["Patrons"],
         "summary": "Delete patron",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "summary": "OK"
-          },
-          "400": {
-            "summary": "Bad Request"
-          },
-          "404": {
-            "summary": "Not Found"
-          },
-          "500": {
-            "summary": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "librarians/": {
-      "get": {
-        "tags": ["Librarians"],
-        "summary": "Get all librarians",
-        "responses": {
-          "200": {
-            "summary": "OK"
-          },
-          "500": {
-            "summary": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "librarians/{id}": {
-      "get": {
-        "tags": ["Librarians"],
-        "summary": "Get librarians by ID",
         "parameters": [
           {
             "name": "id",

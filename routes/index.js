@@ -7,6 +7,5 @@ router
     .use('/movies', require('./movies'))
     .use('/music', require('./music'))
     .use('/patrons', require('./patrons'))
-    .use('/librarians', require('./librarians'))
     
 module.exports = router;

@@ -6,7 +6,7 @@ const env = require('dotenv').config();
 const mongodb = require('./db/connect');
 
 //-----------------------------------------------------
-//OAuth (auth0.com)
+// ----------------OAuth (auth0.com)--------------------
 const { auth, requiresAuth } = require('express-openid-connect');
 const config = {
   authRequired: false,
@@ -41,8 +41,8 @@ app.use(express.static('public'));
 app.use(express.static('js'));
 
 const corsOptions = {
-  // origin: 'http://localhost:8080',
-  origin: 'https://library-management-app-h2gk.onrender.com',
+  origin: 'http://localhost:8080',
+  // origin: 'https://library-management-app-h2gk.onrender.com',
   methods: 'GET,POST,PUT,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204,
@@ -58,7 +58,7 @@ mongodb.initDb((err, db) => {
     console.log('Error connecting to the database');
     console.log(err);
   } else {
-    console.log('Connected to the database');
+    // console.log('Connected to the database');
   }
 });
 
@@ -87,6 +87,16 @@ const fs = require('fs');
   // swagger(outputFile, endpointsFiles, doc);
 // }
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}.`)
-});
+module.exports = app;
+
+// Start server
+if (!module.parent) {
+  const server = app.listen(port, () => {
+    console.log(`Server running on port ${port}.`);
+  });
+
+  // Handle closing server for testing
+  module.exports.closeServer = function () {
+    server.close();
+  };
+}
