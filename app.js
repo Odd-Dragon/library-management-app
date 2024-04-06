@@ -41,8 +41,8 @@ app.use(express.static('public'));
 app.use(express.static('js'));
 
 const corsOptions = {
-  origin: 'http://localhost:8080',
-  // origin: 'https://library-management-app-h2gk.onrender.com',
+  // origin: 'http://localhost:8080',
+  origin: 'https://library-management-app-h2gk.onrender.com',
   methods: 'GET,POST,PUT,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204,

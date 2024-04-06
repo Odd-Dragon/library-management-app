@@ -1,2 +1,1 @@
-<!-- added package for auth0.com authentication-->
-npm i express-openid-connect
+Data validation for the routes are in the controllers

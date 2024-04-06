@@ -46,20 +46,24 @@ const getSingle = async (req, res) => {
 // post
 const createPatron = async (req, res) => {
     try {
-        // Check if first and last name, email and address are provided in the request body
+        // Validate the first and last name, email and address are provided in the request body
         if (!req.body.first_name || !req.body.last_name || !req.body.email || !req.body.address) {
             return res.status(400).json({ error: 'First and last name, email, and address are required fields' });
         }
 
-        // Check if first and last name, email, and address are strings
+        // Validate the first and last name, email, and address are strings
         if (typeof req.body.first_name !== 'string' || typeof req.body.last_name !== 'string' || typeof req.body.email !== 'string' || typeof req.body.address !== 'string') {
             return res.status(400).json({ error: 'First and last name, email, and address must be strings' });
         }
         const patron = {
+            id: req.body.id,
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             email: req.body.email,
-            address: req.body.address
+            address: req.body.address, 
+            title: req.body.title,
+            employee_num: req.body.employee_num,
+            start_date: req.body.start_date
         };  
 
         const response = await mongodb.getDb().db().collection('Patrons').insertOne(patron);
@@ -88,10 +92,14 @@ const updatePatron = async (req, res, next) => {
       const objectId = new ObjectId(patronId);
 
       const patron = {
-        first_name : req.body.first_name,
-        last_name : req.body.last_name,
-        email : req.body.email,
-        address : req.body.address
+        id: req.body.id,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        address: req.body.address, 
+        title: req.body.title,
+        employee_num: req.body.employee_num,
+        start_date: req.body.start_date
       };
       const response = await mongodb.getDb().db().collection('Patrons').replaceOne({ _id: objectId }, patron);
       if (response.acknowledged) {

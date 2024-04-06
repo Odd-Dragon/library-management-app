@@ -18,3 +18,5 @@ router.put('/:id', musicController.updateMusic);
 router.delete('/:id', musicController.deleteMusic);
 
 module.exports = router;
+
+// Validation handling for this route is in the controller
