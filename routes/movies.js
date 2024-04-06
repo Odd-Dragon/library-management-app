@@ -18,3 +18,5 @@ router.put('/:id', moviesController.updateMovie);
 router.delete('/:id', moviesController.deleteMovie);
 
 module.exports = router;
+
+// Validation handling for this route is in the controller

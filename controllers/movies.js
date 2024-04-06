@@ -46,12 +46,12 @@ const getSingle = async (req, res) => {
 // post
 const createMovie = async (req, res) => {
     try {
-         // Check if title, genre and length are provided in the request body
+         // Validate the title, genre and length are provided in the request body
          if (!req.body.title || !req.body.genre || !req.body.length) {
             return res.status(400).json({ error: 'Title, genre and length are required fields' });
         }
 
-        // Check if title and genre are strings and length is a number
+        // Validate the title and genre are strings and length is a number
         if (typeof req.body.title !== 'string' || typeof req.body.genre !== 'string' || typeof req.body.length !== 'number') {
             return res.status(400).json({ error: 'Title and genre must be strings and length must be a number' });
         }

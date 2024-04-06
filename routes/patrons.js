@@ -3,7 +3,7 @@ const router = express.Router();
 
 const patronsController = require('../controllers/patrons');
 
-const { requiresAuth } = require('express-openid-connect');  // wait until add Auth0
+const { requiresAuth } = require('express-openid-connect');  
 
 router.get('/', patronsController.getAll);
 
@@ -18,3 +18,5 @@ router.put('/:id', patronsController.updatePatron);
 router.delete('/:id', patronsController.deletePatron);
 
 module.exports = router;
+
+// Validation handling for this route is in the controller

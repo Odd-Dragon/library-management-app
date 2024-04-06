@@ -18,3 +18,5 @@ router.put('/:id', booksController.updateBook);
 router.delete('/:id', booksController.deleteBook);
 
 module.exports = router;
+
+// Validation handling for this route is in the controller

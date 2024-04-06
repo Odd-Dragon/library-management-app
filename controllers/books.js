@@ -45,12 +45,12 @@ const getSingle = async (req, res) => {
 // post
 const createBook = async (req, res) => {
     try {
-         // Check if title, author and pages are provided in the request body
+         // Validate the title, author and pages are provided in the request body
          if (!req.body.title || !req.body.author || !req.body.pages) {
             return res.status(400).json({ error: 'Title, author and pages are required fields' });
         }
 
-        // Check if title and author are strings and pages is a number
+        // Validate the title and author are strings and pages is a number
         if (typeof req.body.title !== 'string' || typeof req.body.author !== 'string' || typeof req.body.pages !== 'number') {
             return res.status(400).json({ error: 'Title and author must be strings and pages must be a number' });
         }

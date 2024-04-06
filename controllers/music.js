@@ -46,12 +46,12 @@ const getSingle = async (req, res) => {
 // post
 const createMusic = async (req, res) => {
     try {
-        // Check if song title, album title and length are provided in the request body
+        // Validate the song title, album title and length are provided in the request body
         if (!req.body.song_title || !req.body.album_title || !req.body.length) {
             return res.status(400).json({ error: 'Song and album titles and length are required fields' });
         }
 
-        // Check if song title and album title are strings and length is a number
+        // Validate the song title and album title are strings and length is a number
         if (typeof req.body.song_title !== 'string' || typeof req.body.album_title !== 'string' || typeof req.body.length !== 'number') {
             return res.status(400).json({ error: 'Song and album titles must be strings and length must be a number' });
         }
