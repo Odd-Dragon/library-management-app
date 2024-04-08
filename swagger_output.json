@@ -480,6 +480,15 @@
                 },
                 "address": {
                   "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "employee_num": {
+                  "example": "any"
+                },
+                "start_date": {
+                  "example": "any"
                 }
               }
             }
